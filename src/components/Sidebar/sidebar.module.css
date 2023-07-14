@@ -1,0 +1,22 @@
+.link{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white);
+  margin-top: 16px;
+  margin-left: 50px;
+  font-weight: bold;
+}
+
+.link:hover{
+  color: var(--primary);
+}
+
+.link.active{
+  color: var(--primary);
+}
+
+.divider {
+  border: 0.5px solid var(--neutral-30);
+  margin: 20px 0px;
+}
