@@ -1,5 +1,7 @@
+import Discover from './pages/Discover';
+
 function App() {
-  return <h1>Welcome</h1>;
+  return <Discover />;
 }
 
 export default App;
