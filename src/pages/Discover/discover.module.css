@@ -17,6 +17,10 @@
   display: none;
 }
 
+.toolsBar{
+  margin-bottom: 50px;
+}
+
 .main{
   flex:1;
   overflow: scroll;
@@ -40,5 +44,13 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
+  }
+
+  .main{
+    padding: 20px;
+  }
+
+  .main::-webkit-scrollbar {
+    display: none;
   }
 }
