@@ -1,12 +1,23 @@
 import { useState } from 'react';
 
+import { MOVIES } from '../../constants/movies';
 import Sidebar from '../../components/Sidebar';
-import Styles from './discover.module.css';
 import Search from '../../components/SearchInput';
+import MovieCard from '../../components/MovieCard';
+import Styles from './discover.module.css';
 
 function Discover() {
   const [showMenu, toggleMenu] = useState(false);
   const [search, setSearch] = useState('');
+
+  const renderMovie = ({ title, poster }) => (
+    <MovieCard
+      key={title}
+      title={title}
+      poster={poster}
+      onClick={() => console.log(title)}
+    />
+  );
 
   return (
     <div className={Styles.wrapper}>
@@ -27,8 +38,7 @@ function Discover() {
             onChange={(event) => setSearch(event.target.value)}
           />
         </div>
-        {/* <button onClick={() => toggleMenu((v) => !v)}> Toggle Menu</button> */}
-        <div className={Styles.listView}> Movie List</div>
+        <div className={Styles.listView}>{MOVIES.map(renderMovie)}</div>
       </main>
     </div>
   );
