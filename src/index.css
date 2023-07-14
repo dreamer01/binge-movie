@@ -3,11 +3,43 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --white: #FFFFFF;
+  --neutral-10: #D4D7DD;
+  --neutral-20: #7B828E;
+  --neutral-30: #394B61;
+  --neutral-40: #273244;
+  --neutral-50: #1A2536;
+  --text: #1F2A3C;
+  --primary: #00E0FF;
+}
+
+
+body {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0px;
+}
+
+#root {
+  width: 100%;
 }
