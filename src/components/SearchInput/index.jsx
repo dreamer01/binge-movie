@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Search, Cross } from '../Icons';
 import Styles from './search.module.css';
 
-function SearchInput(props) {
+function SearchInput({ value, onChange }) {
   const inputRef = useRef(null);
   const [showInput, toggleInput] = useState(false);
 
@@ -26,13 +26,17 @@ function SearchInput(props) {
         ref={inputRef}
         className={`${Styles.initialInput} ${showInput ? Styles.input : ''}`}
         placeholder='Title, Movies, Keyword'
-        {...props}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
       />
 
       {showInput && (
         <Cross
           className={Styles.closeIcon}
-          onClick={() => toggleInput(false)}
+          onClick={() => {
+            toggleInput(false);
+            onChange('');
+          }}
         />
       )}
     </div>

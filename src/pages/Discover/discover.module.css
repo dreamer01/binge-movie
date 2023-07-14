@@ -61,6 +61,6 @@
   }
 
   .listView {
-    gap: 16px;
+    gap: 16px 4%;
   }
 }

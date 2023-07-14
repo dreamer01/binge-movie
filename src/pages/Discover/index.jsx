@@ -39,10 +39,7 @@ function Discover() {
 
       <main className={Styles.main}>
         <div className={Styles.toolsBar}>
-          <Search
-            value={search}
-            onChange={(event) => setSearch(event.target.value)}
-          />
+          <Search value={search} onChange={setSearch} />
         </div>
         <div className={Styles.listView}>{filteredMovies.map(renderMovie)}</div>
       </main>
