@@ -19,6 +19,12 @@ function Discover() {
     />
   );
 
+  const filteredMovies = search
+    ? MOVIES.filter(({ title }) =>
+        title.toLowerCase().match(search.toLowerCase())
+      )
+    : MOVIES;
+
   return (
     <div className={Styles.wrapper}>
       <aside className={Styles.sidebar}>
@@ -38,7 +44,7 @@ function Discover() {
             onChange={(event) => setSearch(event.target.value)}
           />
         </div>
-        <div className={Styles.listView}>{MOVIES.map(renderMovie)}</div>
+        <div className={Styles.listView}>{filteredMovies.map(renderMovie)}</div>
       </main>
     </div>
   );

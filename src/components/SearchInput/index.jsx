@@ -1,11 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { Search, Cross } from '../Icons';
 import Styles from './search.module.css';
 
 function SearchInput(props) {
+  const inputRef = useRef(null);
   const [showInput, toggleInput] = useState(false);
+
+  useEffect(() => {
+    if (showInput && inputRef.current) {
+      inputRef.current.focus();
+    }
+  });
 
   return (
     <div
@@ -16,12 +23,18 @@ function SearchInput(props) {
       <Search className={Styles.searchIcon} onClick={() => toggleInput(true)} />
 
       <input
+        ref={inputRef}
         className={`${Styles.initialInput} ${showInput ? Styles.input : ''}`}
         placeholder='Title, Movies, Keyword'
         {...props}
       />
 
-      {showInput && <Cross onClick={() => toggleInput(false)} />}
+      {showInput && (
+        <Cross
+          className={Styles.closeIcon}
+          onClick={() => toggleInput(false)}
+        />
+      )}
     </div>
   );
 }

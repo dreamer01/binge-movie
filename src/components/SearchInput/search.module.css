@@ -1,7 +1,7 @@
 .initialInputView{
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 55px;
   padding: 16px;
   width: 100px;
   border-radius: 20px;
@@ -37,6 +37,10 @@
   font-size: 18px;
   outline: none;
   color: white;
+}
+
+.closeIcon{
+  cursor: pointer;
 }
 
 @media (max-width:786px) {
