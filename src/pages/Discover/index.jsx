@@ -26,6 +26,7 @@ function Discover() {
 
   const movieList = filteredMovies.map(renderMovie);
 
+  // Where to insert the Movie Details component is movie selected
   if (movie) {
     const listWidth = listViewRef.current.offsetWidth;
     const itemsPerRow =
