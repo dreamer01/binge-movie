@@ -49,7 +49,7 @@ function Discover() {
 
   return (
     <div className={Styles.wrapper}>
-      <aside className={Styles.sidebar}>
+      <aside className={Styles.sidebar} onClick={() => setMovie('')}>
         <Sidebar />
       </aside>
 
@@ -60,7 +60,7 @@ function Discover() {
       )}
 
       <main className={Styles.main}>
-        <div className={Styles.toolsBar}>
+        <div className={Styles.toolsBar} onClick={() => setMovie('')}>
           <Search value={search} onChange={setSearch} />
           <div className={Styles.actionView}>
             <Sun />
