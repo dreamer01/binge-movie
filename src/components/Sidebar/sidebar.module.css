@@ -1,3 +1,7 @@
+.wrapper{
+  position: relative;
+}
+
 .link{
   display: flex;
   align-items: center;
@@ -19,4 +23,17 @@
 .divider {
   border: 0.5px solid var(--neutral-30);
   margin: 20px 0px;
+}
+
+.closeIcon {
+  display: none;
+}
+
+@media (max-width:786px) {
+  .closeIcon{
+    display: block;
+    position: absolute;
+    right: 20px;
+    top:20px;
+  }
 }

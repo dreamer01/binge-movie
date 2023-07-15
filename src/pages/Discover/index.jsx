@@ -1,11 +1,12 @@
 import { useState, useRef } from 'react';
 
 import { MOVIES } from '../../constants/movies';
+import { More, Sun } from '../../components/Icons';
 import Sidebar from '../../components/Sidebar';
 import Search from '../../components/SearchInput';
 import MovieCard from '../../components/MovieCard';
-import Styles from './discover.module.css';
 import MovieDetails from '../../components/MovieDetails';
+import Styles from './discover.module.css';
 
 function Discover() {
   const listViewRef = useRef(null);
@@ -53,13 +54,20 @@ function Discover() {
 
       {showMenu && (
         <aside className={Styles.mobileMenu}>
-          <Sidebar />
+          <Sidebar closeMenu={() => toggleMenu(false)} />
         </aside>
       )}
 
       <main className={Styles.main}>
         <div className={Styles.toolsBar}>
           <Search value={search} onChange={setSearch} />
+          <div className={Styles.actionView}>
+            <Sun />
+            <More
+              className={Styles.moreAction}
+              onClick={() => toggleMenu(true)}
+            />
+          </div>
         </div>
 
         <div ref={listViewRef} className={Styles.listView}>

@@ -1,11 +1,14 @@
+import PropTypes from 'prop-types';
+
 import { LINKS, PAGES, QUICK_ACTIONS } from '../../constants/sidebar';
+import { Cross } from '../Icons';
 import UserProfile from '../UserProfile';
 
 import Styles from './sidebar.module.css';
 
 const pathname = '/';
 
-function Sidebar() {
+function Sidebar({ closeMenu }) {
   const renderLink = ({ label, path, icon: LinkIcon }) => {
     return (
       <a
@@ -19,7 +22,8 @@ function Sidebar() {
   };
 
   return (
-    <div>
+    <div className={Styles.wrapper}>
+      <Cross className={Styles.closeIcon} onClick={closeMenu} />
       <UserProfile avatarSrc='/images/avatar.png' name='Eric Hoffman' />
       <hr className={Styles.divider} />
       <nav className={Styles.nav}>{PAGES.map(renderLink)}</nav>
@@ -30,5 +34,9 @@ function Sidebar() {
     </div>
   );
 }
+
+Sidebar.propTypes = {
+  closeMenu: PropTypes.func,
+};
 
 export default Sidebar;
