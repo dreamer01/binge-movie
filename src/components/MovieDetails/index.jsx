@@ -15,8 +15,14 @@ const MovieDetails = ({
   imdbRating,
 }) => {
   const [show, setShow] = useState(false);
+  const progressWidth = `${(parseInt(imdbRating) / 10) * 100}%`;
 
   useEffect(() => {
+    const progress = document.getElementById('progress');
+    progress.animate([{ width: '0%' }, { width: progressWidth }], {
+      duration: 1000,
+      iterations: 1,
+    });
     setTimeout(() => setShow(true), [500]);
   });
 
@@ -38,9 +44,10 @@ const MovieDetails = ({
         <div className={Styles.ratingsView}>
           <div className={Styles.progressBar}>
             <div
+              id='progress'
               className={Styles.progress}
               style={{
-                width: `${(parseInt(imdbRating) / 10) * 100}%`,
+                width: progressWidth,
               }}
             />
           </div>
