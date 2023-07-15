@@ -17,7 +17,7 @@ const MovieDetails = ({
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setShow(true), [1000]);
+    setTimeout(() => setShow(true), [500]);
   });
 
   const ActionView = (

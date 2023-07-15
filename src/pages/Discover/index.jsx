@@ -34,7 +34,7 @@ function Discover() {
     const insertAtIndex = Math.floor(selectedIndex / itemsPerRow) * itemsPerRow;
 
     const detailView = movie && (
-      <div key={movie.title + '-inserted'} className={Styles.translate}>
+      <div key={insertAtIndex + '-inserted'} className={Styles.translate}>
         <MovieDetails
           key={insertAtIndex}
           {...MOVIES.find(({ title }) => title === movie)}

@@ -8,6 +8,7 @@
 
 .showStyle{
   opacity: 1;
+  background-color: var(--neutral-30);
 }
 
 .poster {

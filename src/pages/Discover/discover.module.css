@@ -49,7 +49,7 @@
   position: relative;
   height: 450px;
   background-color: var(--neutral-30);
-  animation: translate 1s ease-out 0s 1;
+  animation: translate 0.5s ease 0s 1;
 }
 
 @keyframes translate {
@@ -64,18 +64,17 @@
 .top{
   position: absolute;
   width: 100%;
-  top:0px;
+  top:0%;
   background-color: var(--neutral-40);
-  animation: reveal 1s ease-out 0.3s 1;
+  animation: reveal 1s ease 0.5s 1;
 }
 
 .bottom {
   position: absolute;
   width: 100%;
-  bottom: 0px;
+  bottom: 0%;
   background-color: var(--neutral-40);
-  animation: reveal 1s ease-out 0.3s 1;
-
+  animation: reveal 1s ease 0.5s 1;
 }
 
 @keyframes reveal {
