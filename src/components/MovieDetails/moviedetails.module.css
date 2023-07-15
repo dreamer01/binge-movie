@@ -1,0 +1,80 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.showStyle{
+  opacity: 1;
+}
+
+.poster {
+  height: 100%;
+  width: 32%;
+  object-fit: cover;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  padding: 24px 32px;
+}
+
+.detailsTable{
+  align-self: flex-start;
+}
+
+.mobileActions{
+  display: none;
+}
+
+.btnView {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.playBtn {
+  margin-right: 20px;
+}
+
+@media (max-width:786px) {
+  .wrapper {
+    font-size: 12px;
+  }
+
+  .poster {
+    height: 60%;
+    width: 50%;
+  }
+
+  .details {
+    padding: 12px;
+    justify-content: space-evenly;
+  }
+
+  .break {
+    flex-basis: 100%;
+    height: 0;
+  }
+
+  .mobileActions {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    flex: 1;
+  }
+
+  .desktopActions{
+    display: none;
+  }
+
+  .btnView {
+    flex: 1;
+    justify-content: space-between;
+  }
+}
