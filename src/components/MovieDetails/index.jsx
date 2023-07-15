@@ -12,6 +12,7 @@ const MovieDetails = ({
   director,
   language,
   plot,
+  imdbRating,
 }) => {
   const [show, setShow] = useState(false);
 
@@ -34,6 +35,17 @@ const MovieDetails = ({
       <img className={Styles.poster} src={poster} alt={`${title}-poster`} />
       <div className={Styles.details}>
         <h2>{title}</h2>
+        <div className={Styles.ratingsView}>
+          <div className={Styles.progressBar}>
+            <div
+              className={Styles.progress}
+              style={{
+                width: `${(parseInt(imdbRating) / 10) * 100}%`,
+              }}
+            />
+          </div>
+          <p>{imdbRating}/10</p>
+        </div>
         <table className={Styles.detailsTable}>
           <tbody>
             <tr>
@@ -70,6 +82,7 @@ MovieDetails.propTypes = {
   director: PropTypes.string,
   language: PropTypes.string,
   plot: PropTypes.string,
+  imdbRating: PropTypes.string,
 };
 
 export default MovieDetails;

@@ -16,6 +16,30 @@
   object-fit: cover;
 }
 
+.ratingsView{
+  display: flex;
+  align-items: center;
+}
+
+.progressBar{
+  height: 8px;
+  position: relative;
+  border-radius: 25px;
+  width: 100px;
+  background-color: var(--neutral-40);
+  overflow: hidden;
+  margin-right: 12px;
+}
+
+.progress{
+  display: block;
+  height: 100%;
+  border-radius: 8px;
+  background-color: var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+
 .details {
   display: flex;
   flex-direction: column;
