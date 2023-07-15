@@ -1,0 +1,32 @@
+.button {
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  border-radius: 5px;
+  padding: 12px 40px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-image: linear-gradient(rgb(0 0 0/5%) 0 0);
+}
+
+.primary {
+  color: var(--neutral-50);
+  background: var(--primary);
+}
+
+.secondary {
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+}
+
+@media (max-width:786px) {
+  .button{ 
+    font-size: 14px;
+    padding: 12px 20px;
+    height: 40px;
+  }
+}
