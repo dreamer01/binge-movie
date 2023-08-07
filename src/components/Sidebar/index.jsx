@@ -10,11 +10,12 @@ const pathname = '/';
 
 function Sidebar({ closeMenu }) {
   const renderLink = ({ label, path, icon: LinkIcon }) => {
+    const url = window.location.origin + path;
     return (
       <a
         className={`${Styles.link} ${path === pathname ? Styles.active : ''}`}
         key={label}
-        href={`/${path}`}
+        href={url}
       >
         <LinkIcon style={{ marginRight: 12 }} /> {label}
       </a>
